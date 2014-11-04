@@ -23,7 +23,7 @@ static unsigned char ids_block_matches(int *e_block, int *p_block) {
 
 static unsigned char piu_matches(piu *e, piu *pp) {
   int *e_ptr = (int *)e, *pp_ptr = (int *)pp;
-  for (int i = 0; i < sizeof(piu); ++i) {
+  for (int i = 0; i < sizeof(piu) / sizeof(int); ++i) {
     if (!pp_ptr[i]) continue;
     if (pp_ptr[i] != e_ptr[i]) return 0;
   }
